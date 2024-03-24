@@ -12,4 +12,4 @@ BEGIN
     INSERT INTO corrections (user_id, project_id, score)
     VALUES (users_id, (SELECT id FROM projects WHERE name=project_name), score);
 END $$
-DELIMETER ;
+DELIMITER ;
