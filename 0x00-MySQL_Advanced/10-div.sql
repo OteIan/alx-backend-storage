@@ -16,4 +16,4 @@ BEGIN
         RETURN (a / b);
     END IF;
 END $$
-DELIMETER ;
+DELIMITER ;
