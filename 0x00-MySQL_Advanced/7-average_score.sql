@@ -10,7 +10,7 @@ BEGIN
     DECLARE avg FLOAT DEFAULT 0;
 
     SELECT AVG(score) INTO avg
-        FROM projects
+        FROM corrections
         WHERE user_id=user_id;
     
     UPDATE users
