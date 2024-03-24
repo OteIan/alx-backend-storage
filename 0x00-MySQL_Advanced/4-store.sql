@@ -1,6 +1,6 @@
 -- Decreases quantity of an item after adding a new order
 DROP TRIGGER IF EXISTS update_item_number;
-DELIMETER $$
+DELIMITER $$
 CREATE TRIGGER update_item_number
 AFTER INSERT ON orders
 FOR EACH ROW
