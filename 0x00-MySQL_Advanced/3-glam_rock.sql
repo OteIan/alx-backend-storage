@@ -1,7 +1,7 @@
 -- Lists bands
 SELECT
     band_name,
-    CONCAT(formed, "-", IFNULL(split, 2022)) AS lifespan
+    DATE_SUB(IFNULL(split, 2022), formed) AS lifespan
 FROM
     metal_bands
 ORDER BY
