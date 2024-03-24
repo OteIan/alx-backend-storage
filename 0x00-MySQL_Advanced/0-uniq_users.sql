@@ -1,6 +1,6 @@
 -- Create a tabel users
-CREATE TABLE IF NOT EXISTS users(
-    ID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    email varchar(255) UNIQUE,
-    NAME varchar(255)
+CREATE TABLE IF NOT EXISTS users (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) UNIQUE,
+    name VARCHAR(255)
 );
