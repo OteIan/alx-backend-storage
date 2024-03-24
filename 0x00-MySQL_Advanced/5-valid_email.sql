@@ -10,6 +10,6 @@ BEGIN
         SET NEW.valid_email = 0;
     ELSE
         SET NEW.valid_email = NEW.valid_email;
-    ENDIF;
+    END IF;
 END $$
 DELIMITER ;
