@@ -1,7 +1,7 @@
 -- Resets valid_email
 DROP TRIGGER IF EXISTS reset_email;
 
-DELIMITER &&
+DELIMITER $$
 CREATE TRIGGER reset_email
 AFTER UPDATE ON users
 FOR EACH ROW
