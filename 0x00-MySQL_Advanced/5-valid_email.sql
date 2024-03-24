@@ -10,4 +10,4 @@ BEGIN
         SET valid_email = 1
         WHERE OLD.email != NEW.email;
 END $$
-DELIMITER;
+DELIMITER ;
