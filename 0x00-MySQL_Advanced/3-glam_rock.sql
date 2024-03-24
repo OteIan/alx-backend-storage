@@ -5,4 +5,4 @@ SELECT
 FROM
     metal_bands
 ORDER BY
-    lifespan;
+    lifespan DESC;
