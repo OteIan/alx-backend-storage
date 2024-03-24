@@ -8,6 +8,6 @@ FOR EACH ROW
 BEGIN
     UPDATE users
         SET valid_email = 1
-        WHERE OLD.email != NEW.email
+        WHERE OLD.email != NEW.email;
 END $$
 DELIMITER;
