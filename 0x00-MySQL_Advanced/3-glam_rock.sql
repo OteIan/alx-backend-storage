@@ -5,6 +5,6 @@ SELECT
 FROM
     metal_bands
 WHERE
-    FIND_IN_SET('Glam rock' IFNULL(style, "")) > 0;
+    FIND_IN_SET('Glam rock' IFNULL(style, "")) > 0
 ORDER BY
     lifespan DESC;
