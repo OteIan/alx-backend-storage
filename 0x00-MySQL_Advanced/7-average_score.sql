@@ -7,10 +7,10 @@ CREATE PROCEDURE ComputeAverageScoreForUser(
     IN user_id INT
 )
 BEGIN
-    DECLARE avg FLOAT DEFAULT 0;
+    DECLARE avg DECIMAL(10, 2) DEFAULT 0;
 
     SELECT AVG(score) INTO avg
-        FROM corrections
+        FROM correcti
         WHERE user_id=user_id;
     
     UPDATE users
