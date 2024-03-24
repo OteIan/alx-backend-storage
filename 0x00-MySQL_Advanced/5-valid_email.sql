@@ -1,5 +1,5 @@
 -- Resets valid_email
-DROP TRIGGER IF NOT EXISTS reset_email;
+DROP TRIGGER IF EXISTS reset_email;
 
 DELIMITER &&
 CREATE TRIGGER reset_email
