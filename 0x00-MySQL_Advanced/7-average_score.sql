@@ -10,7 +10,7 @@ BEGIN
     DECLARE avg DECIMAL(10, 2) DEFAULT 0;
 
     SELECT AVG(score) INTO avg
-        FROM correcti
+        FROM corrections
         WHERE user_id=user_id;
     
     UPDATE users
