@@ -1,5 +1,6 @@
 // Finds and modifies a document
 db.school.findAndModify({
     query: {"name": "Holberton school"},
-    update: {$set: {"address": "972 Mission street"}}
+    update: {$set: {"address": "972 Mission street"}},
+    new: true
 })
