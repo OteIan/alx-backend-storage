@@ -1,6 +1,6 @@
 // Inserts a document in the collection 'school'
-var db_name="$3";
+var db_name = db.getMongo().getDB("$3");
 use db_name;
-db.school.doc({
+db.school.insertOne({
     "name": "Holberton School"
 });
