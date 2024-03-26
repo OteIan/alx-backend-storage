@@ -15,4 +15,7 @@ def nginx_logs(nginx_collection):
 
     status_checks = len(list(nginx_collection.find({'method': 'GET', 'path': '/status'})))
     print(f'{status_checks} status check')
-    
+
+if __name__ == "__main__":
+    client = MongoClient('mongodb://127.0.0.1:27017')
+    nginx_logs(client.logs.nginx)
