@@ -1,6 +1,6 @@
 // Inserts a document in the collection 'school'
-db_name="$3"
-use $db_name
+var db_name="$3";
+use $db_name;
 db.school.doc({
-    "name": "Holbeerton School"
-})
+    "name": "Holberton School"
+});
