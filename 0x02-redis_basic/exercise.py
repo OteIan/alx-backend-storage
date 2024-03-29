@@ -40,6 +40,32 @@ def call_history(method: Callable) -> Callable:
     return invoker
 
 
+def replay(fn: Callable) -> None:
+    """ Displays call history of a Cache method """
+    if fn is None or not hasattr(fn, '__self__'):
+        return
+
+    store = getattr(fn.__self__, '_redis', None)
+    if not isinstance(store, redis.Redis):
+        return
+
+    name = fn.__qualname__
+    key_in = f'{name}:inputs'
+    key_out = f'{name}:outputs'
+    call_count = 0
+
+    if store.exists(name) != 0:
+        call_count = int(store.get(name))
+
+    print(f'{name} was called {call_count} times:')
+
+    inputs = store.lrange(key_in, 0, -1)
+    outputs = store.lrange(key_out, 0, -1)
+
+    for input, output in zip(inputs, outputs):
+        print(f'{name}(*{input.decode("utf-8")}) -> {output}')
+
+
 class Cache:
     """ Cache class """
     def __init__(self) -> None:
