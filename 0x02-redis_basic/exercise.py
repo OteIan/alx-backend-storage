@@ -18,6 +18,7 @@ def count_calls(method: Callable) -> Callable:
 
     return wrapper
 
+
 def call_history(method: Callable) -> Callable:
     """ Detail tracker of a method in Cache class """
     @wraps(method)
@@ -28,14 +29,14 @@ def call_history(method: Callable) -> Callable:
 
         if isinstance(self._redis, redis.Redis):
             self._redis.rpush(key_in, str(args))
-        
+
         output = method(self, *args, **kwargs)
 
         if isinstance(self._redis, redis.Redis):
             self._redis.rpush(key_out, output)
 
         return output
-    
+
     return invoker
 
 
